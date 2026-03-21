@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Angel VPN | Безопасное подключение</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0c15;
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный градиентный фон */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(100, 80, 220, 0.15), transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 100, 150, 0.1), transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Плавающие частицы */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(138, 110, 255, 0.4);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Основной контейнер */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 550px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Карточка с эффектом стекла */
+        .glass-card {
+            background: rgba(15, 20, 35, 0.55);
+            backdrop-filter: blur(20px);
+            border-radius: 3rem;
+            padding: 2rem 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        /* Логотип и заголовок */
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-icon {
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, #8a6eff, #5a3ce8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 15px 30px -10px rgba(90, 60, 232, 0.5);
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 15px 30px -10px rgba(90, 60, 232, 0.4);
+            }
+            100% {
+                box-shadow: 0 20px 40px -5px rgba(138, 110, 255, 0.7);
+            }
+        }
+
+        .logo-icon i {
+            font-size: 42px;
+            color: white;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #c5bbff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 0.25rem;
+            text-align: center;
+        }
+
+        /* Секция с функциями и обходом задержек */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1.2rem;
+            padding: 0.8rem;
+            text-align: center;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s;
+        }
+
+        .feature-item i {
+            font-size: 1.3rem;
+            color: #8a6eff;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .feature-item span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            display: block;
+            opacity: 0.9;
+        }
+
+        /* Статусная панель */
+        .status-panel {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 2rem;
+            padding: 0.8rem 1.2rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .status-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ff5e5e;
+            box-shadow: 0 0 6px #ff5e5e;
+            transition: all 0.2s;
+        }
+
+        .status-dot.active {
+            background: #3eff9e;
+            box-shadow: 0 0 10px #3eff9e;
+        }
+
+        .status-text {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .speed-badge {
+            font-size: 0.7rem;
+            background: rgba(138, 110, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* КРУГЛАЯ КНОПКА СТАРТ */
+        .start-button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 1.8rem 0;
+            position: relative;
+        }
+
+        .circle-btn {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #6c4eff, #3a29b0);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 20px 35px -8px rgba(108, 78, 255, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.2) inset;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .circle-btn:active {
+            transform: scale(0.94);
+        }
+
+        .circle-btn i {
+            font-size: 48px;
+            color: white;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .circle-btn span {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .circle-btn .small-text {
+            font-size: 0.7rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Пульсирующее кольцо вокруг кнопки */
+        .pulse-ring {
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background: rgba(108, 78, 255, 0.3);
+            animation: pulseRing 1.8s infinite;
+            z-index: 1;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* Секция обхода задержек */
+        .bypass-section {
+            background: linear-gradient(90deg, rgba(138, 110, 255, 0.1), rgba(100, 80, 200, 0.05));
+            border-radius: 1.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            border: 1px solid rgba(138, 110, 255, 0.3);
+        }
+
+        .bypass-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #a98eff;
+            margin-bottom: 0.5rem;
+        }
+
+        .bypass-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.7rem;
+        }
+
+        .bypass-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Индикатор задержки */
+        .latency-indicator {
+            font-family: monospace;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Футер */
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.65rem;
+            opacity: 0.5;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Анимация загрузки при переходе */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 20, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s ease;
+        }
+
+        .loader-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .loader-spinner {
+            width: 65px;
+            height: 65px;
+            border: 3px solid rgba(138, 110, 255, 0.3);
+            border-top: 3px solid #8a6eff;
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .loader-sub {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            .glass-card {
+                padding: 1.5rem;
+            }
+            .circle-btn {
+                width: 130px;
+                height: 130px;
+            }
+            .circle-btn i {
+                font-size: 38px;
+            }
+            .pulse-ring {
+                width: 155px;
+                height: 155px;
+            }
+            .features-grid {
+                gap: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<div class="container">
+    <div class="glass-card">
+        
+        <!-- Логотип и название -->
+        <div class="logo-wrapper">
+            <div class="logo-icon">
+                <i class="fas fa-feather-alt"></i>
+            </div>
+            <h1>Angel VPN</h1>
+            <div class="tagline">
+                <i class="fas fa-shield-alt"></i> Безопасный доступ без границ
+            </div>
+        </div>
+
+        <!-- Функции обхода -->
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-bolt"></i>
+                <span>Обход DPI</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <span>Анти-задержки</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-unlock-alt"></i>
+                <span>Белые списки</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-paper-plane"></i>
+                <span>Telegram доступ</span>
+            </div>
+        </div>
+
+        <!-- Статус с индикацией задержки -->
+        <div class="status-panel">
+            <div class="status-info">
+                <div class="status-dot" id="statusDot"></div>
+                <span class="status-text" id="statusText">Ожидание подключения</span>
+            </div>
+            <div class="latency-indicator" id="latencyIndicator">
+                <i class="fas fa-waveform"></i>
+                <span id="latencyValue">0</span> <span>мс</span>
+            </div>
+        </div>
+
+        <!-- Секция обхода задержек Telegram и многое другое -->
+        <div class="bypass-section">
+            <div class="bypass-title">
+                <i class="fas fa-fighter-jet"></i> ОБХОД ЗАДЕРЖЕК & БЕЛЫХ СПИСКОВ
+            </div>
+            <div class="bypass-stats">
+                <span><i class="fas fa-check-circle" style="color: #3eff9e;"></i> Telegram без блоков</span>
+                <span><i class="fas fa-tachometer-alt"></i> Низкая задержка</span>
+                <span><i class="fas fa-infinity"></i> Безлимит</span>
+            </div>
+        </div>
+
+        <!-- КРУГЛАЯ КНОПКА СТАРТ / ЗАПУСТИТЬ -->
+        <div class="start-button-wrapper">
+            <div class="pulse-ring"></div>
+            <button class="circle-btn" id="startBtn">
+                <i class="fas fa-play"></i>
+                <span>СТАРТ</span>
+                <span class="small-text">запустить</span>
+            </button>
+        </div>
+
+        <!-- Дополнительная информация -->
+        <div class="footer">
+            <span><i class="fab fa-telegram"></i> @angelvpns</span>
+            <span><i class="fas fa-lock"></i> Шифрование X25519</span>
+            <span><i class="fas fa-globe"></i> Обход любых ограничений</span>
+        </div>
+    </div>
+</div>
+
+<!-- Оверлей загрузки при переходе -->
+<div id="loaderOverlay" class="loader-overlay">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Установка защищенного туннеля</div>
+    <div class="loader-sub">Оптимизация маршрута, обход задержек...</div>
+</div>
+
+<script>
+    (function() {
+        // === Элементы ===
+        const startBtn = document.getElementById('startBtn');
+        const loaderOverlay = document.getElementById('loaderOverlay');
+        const statusDot = document.getElementById('statusDot');
+        const statusTextSpan = document.getElementById('statusText');
+        const latencyValueSpan = document.getElementById('latencyValue');
+        
+        // === ЦЕЛЕВОЙ TELEGRAM КАНАЛ ===
+        const TELEGRAM_URL = 'https://t.me/angelvpns';
+        
+        // === Имитация обхода задержек (динамический пинг) ===
+        let latencyInterval = null;
+        let isConnecting = false;
+        
+        // Функция обновления задержки (имитация реального пинга)
+        function updateLatency() {
+            // Симулируем задержку от 15 до 60 мс (низкая задержка после оптимизации)
+            const baseLatency = Math.floor(Math.random() * 35) + 12;
+            latencyValueSpan.textContent = baseLatency;
+        }
+        
+        // Запускаем обновление пинга каждые 2 секунды
+        function startLatencySimulation() {
+            if (latencyInterval) clearInterval(latencyInterval);
+            updateLatency();
+            latencyInterval = setInterval(updateLatency, 2000);
+        }
+        
+        // Останавливаем (если нужно)
+        function stopLatencySimulation() {
+            if (latencyInterval) {
+                clearInterval(latencyInterval);
+                latencyInterval = null;
+            }
+        }
+        
+        // Функция обновления статуса (подключен / отключен)
+        function setStatus(connected) {
+            if (connected) {
+                statusDot.classList.add('active');
+                statusTextSpan.innerHTML = '<i class="fas fa-shield-hooded"></i> Защита активна • Обход включен';
+            } else {
+                statusDot.classList.remove('active');
+                statusTextSpan.textContent = 'Готов к запуску';
+            }
+        }
+        
+        // Изначально статус "не подключен"
+        setStatus(false);
+        startLatencySimulation();
+        
+        // Функция перехода в Telegram с анимацией обхода задержек
+        function redirectToTelegram() {
+            // Показываем красивый оверлей с анимацией
+            loaderOverlay.classList.add('active');
+            
+            // Меняем текст оверлея для эффекта обхода задержек
+            const loaderText = document.querySelector('.loader-text');
+            const loaderSub = document.querySelector('.loader-sub');
+            
+            let step = 0;
+            const steps = [
+                { text: "Анализ сети и обход DPI...", sub: "Сканирование белых списков" },
+                { text: "Оптимизация маршрута", sub: "Снижение задержки..." },
+                { text: "Подключение к Telegram Gateway", sub: "Использование Angel протокола" },
+                { text: "Перенаправление в канал", sub: "@angelvpns" }
+            ];
+            
+            let currentStep = 0;
+            const stepInterval = setInterval(() => {
+                if (currentStep < steps.length) {
+                    loaderText.textContent = steps[currentStep].text;
+                    loaderSub.textContent = steps[currentStep].sub;
+                    currentStep++;
+                } else {
+                    clearInterval(stepInterval);
+                }
+            }, 350);
+            
+            // Задержка для создания ощущения работы обхода задержек и защиты
+            setTimeout(() => {
+                // Финальный переход в Telegram канал
+                window.location.href = TELEGRAM_URL;
+            }, 1800);
+        }
+        
+        // Функция для эффекта "запуска" и перехода
+        function handleStart() {
+            if (isConnecting) return; // Блокируем повторные нажатия
+            isConnecting = true;
+            
+            // Визуальный фидбек на кнопке
+            const originalBtnHTML = startBtn.innerHTML;
+            startBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i><span>ЗАПУСК</span><span class="small-text">обход...</span>';
+            startBtn.style.transform = 'scale(0.96)';
+            
+            // Имитируем активацию VPN и обход задержек
+            setStatus(true);
+            
+            // Эффект улучшения пинга (делаем задержку еще меньше)
+            latencyValueSpan.textContent = '12';
+            
+            // Через небольшую паузу показываем, что все готово и редиректим
+            setTimeout(() => {
+                // Возвращаем кнопке исходный вид (на случай, если оверлей не сработает)
+                startBtn.innerHTML = originalBtnHTML;
+                startBtn.style.transform = '';
+                // Запускаем редирект с лоадером
+                redirectToTelegram();
+                
+                // Сбрасываем флаг через время, но страница уже уйдет в редирект
+                setTimeout(() => {
+                    isConnecting = false;
+                }, 3000);
+            }, 400);
+        }
+        
+        // === Анимация частиц на фоне ===
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 35;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 8 + 4 + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                particle.style.background = `rgba(${100 + Math.random() * 80}, ${80 + Math.random() * 70}, 255, ${Math.random() * 0.5 + 0.2})`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // === Добавляем эффект "обход задержек" на панели статуса ===
+        function animateBypassEffect() {
+            const bypassSection = document.querySelector('.bypass-section');
+            if (bypassSection) {
+                setInterval(() => {
+                    if (statusDot.classList.contains('active')) {
+                        bypassSection.style.borderColor = 'rgba(138, 110, 255, 0.7)';
+                        bypassSection.style.boxShadow = '0 0 8px rgba(138, 110, 255, 0.3)';
+                        setTimeout(() => {
+                            bypassSection.style.borderColor = 'rgba(138, 110, 255, 0.3)';
+                            bypassSection.style.boxShadow = 'none';
+                        }, 400);
+                    }
+                }, 1800);
+            }
+        }
+        
+        // Обработчик клика на круглую кнопку
+        startBtn.addEventListener('click', handleStart);
+        
+        // Инициализация эффектов
+        createParticles();
+        animateBypassEffect();
+        
+        // Дополнительно: если страница загружена из кэша после возврата, сбрасываем состояние
+        window.addEventListener('pageshow', function(event) {
+            if (loaderOverlay) loaderOverlay.classList.remove('active');
+            setStatus(false);
+            isConnecting = false;
+            if (startBtn) {
+                startBtn.innerHTML = '<i class="fas fa-play"></i><span>СТАРТ</span><span class="small-text">запустить</span>';
+                startBtn.style.transform = '';
+            }
+            startLatencySimulation();
+            latencyValueSpan.textContent = Math.floor(Math.random() * 35) + 12;
+        });
+        
+        // Убираем оверлей если вдруг что-то пошло не так (защита)
+        window.addEventListener('error', function() {
+            if (loaderOverlay.classList.contains('active')) {
+                setTimeout(() => {
+                    loaderOverlay.classList.remove('active');
+                }, 500);
+            }
+        });
+        
+        console.log('Angel VPN — обход задержек, белых списков, готов к работе');
+    })();
+</script>
+</body>
+</html>
