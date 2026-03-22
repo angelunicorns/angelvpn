@@ -14,91 +14,98 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Базовые переменные (ангельская тема) */
+        /* ========== ОСНОВНЫЕ СТИЛИ ========== */
         :root {
             --bg-primary: #f5f7ff;
-            --bg-secondary: rgba(255, 255, 255, 0.7);
-            --bg-card: rgba(255, 255, 255, 0.65);
+            --bg-secondary: rgba(255, 255, 255, 0.3);
+            --bg-card: rgba(255, 255, 255, 0.2);
             --text-primary: #1a1a2e;
             --text-secondary: #4a4a6a;
             --accent: #6c4eff;
             --accent-dark: #5a3ce8;
-            --border: rgba(255, 255, 255, 0.5);
+            --border: rgba(255, 255, 255, 0.25);
             --shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-            --status-bg: rgba(255, 255, 255, 0.3);
-            --feature-bg: rgba(255, 255, 255, 0.25);
-            --input-bg: rgba(255, 255, 255, 0.9);
+            --status-bg: rgba(255, 255, 255, 0.12);
+            --feature-bg: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(255, 255, 255, 0.5);
             --gradient-start: #6c4eff;
             --gradient-end: #5a3ce8;
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.6);
             --btn-shadow: 0 15px 30px -8px rgba(108, 78, 255, 0.4);
-            --blur-amount: 20px;
+            --blur-amount: 12px;
         }
 
-        /* Тема: Закат */
+        /* Стиль Ангельский */
+        body[data-theme="default"] {
+            --bg-primary: linear-gradient(135deg, #f5f7ff, #e9ecff);
+            --bg-secondary: rgba(255, 255, 255, 0.3);
+            --bg-card: rgba(255, 255, 255, 0.2);
+            --text-primary: #1a1a2e;
+            --accent: #6c4eff;
+            --gradient-start: #6c4eff;
+            --gradient-end: #5a3ce8;
+        }
         body[data-theme="sunset"] {
             --bg-primary: linear-gradient(135deg, #1a0b2e, #2d1b3a);
-            --bg-secondary: rgba(45, 27, 58, 0.65);
-            --bg-card: rgba(45, 27, 58, 0.6);
+            --bg-secondary: rgba(45, 27, 58, 0.25);
+            --bg-card: rgba(45, 27, 58, 0.18);
             --text-primary: #ffeedd;
-            --text-secondary: #ffccaa;
             --accent: #ff6b6b;
-            --accent-dark: #ff8e53;
-            --border: rgba(255, 200, 150, 0.4);
             --gradient-start: #ff6b6b;
             --gradient-end: #ff8e53;
-            --glass-bg: rgba(255, 255, 255, 0.2);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --btn-shadow: 0 15px 30px -8px rgba(255, 107, 107, 0.4);
         }
-
-        /* Тема: Космос */
         body[data-theme="space"] {
             --bg-primary: linear-gradient(135deg, #0a0f2a, #0e1a2a);
-            --bg-secondary: rgba(14, 26, 42, 0.65);
-            --bg-card: rgba(10, 20, 40, 0.6);
+            --bg-secondary: rgba(14, 26, 42, 0.25);
+            --bg-card: rgba(10, 20, 40, 0.18);
             --text-primary: #b0e0ff;
-            --text-secondary: #88aaff;
             --accent: #4facfe;
-            --accent-dark: #00f2fe;
-            --border: rgba(79, 172, 254, 0.4);
             --gradient-start: #4facfe;
             --gradient-end: #00f2fe;
-            --btn-shadow: 0 15px 30px -8px rgba(79, 172, 254, 0.4);
         }
-
-        /* Тема: Неон */
         body[data-theme="neon"] {
             --bg-primary: linear-gradient(135deg, #0a0a0a, #111111);
-            --bg-secondary: rgba(17, 17, 17, 0.7);
-            --bg-card: rgba(20, 20, 30, 0.65);
+            --bg-secondary: rgba(17, 17, 17, 0.3);
+            --bg-card: rgba(20, 20, 30, 0.22);
             --text-primary: #0fff0f;
-            --text-secondary: #88ff88;
             --accent: #00ff9d;
-            --accent-dark: #00ffcc;
-            --border: rgba(0, 255, 157, 0.4);
             --gradient-start: #00ff9d;
             --gradient-end: #00ffcc;
-            --btn-shadow: 0 15px 30px -8px rgba(0, 255, 157, 0.4);
         }
-
-        /* Темная тема */
         body[data-theme="dark"] {
             --bg-primary: linear-gradient(135deg, #0a0c15, #141824);
-            --bg-secondary: rgba(20, 24, 36, 0.7);
-            --bg-card: rgba(15, 20, 35, 0.65);
+            --bg-secondary: rgba(20, 24, 36, 0.3);
+            --bg-card: rgba(15, 20, 35, 0.22);
             --text-primary: #ffffff;
-            --text-secondary: #a0a0c0;
             --accent: #8a6eff;
-            --accent-dark: #6c4eff;
-            --border: rgba(255, 255, 255, 0.25);
             --gradient-start: #8a6eff;
             --gradient-end: #6c4eff;
-            --status-bg: rgba(255, 255, 255, 0.1);
-            --feature-bg: rgba(255, 255, 255, 0.1);
-            --input-bg: rgba(30, 36, 56, 0.9);
-            --btn-shadow: 0 15px 30px -8px rgba(138, 110, 255, 0.4);
+        }
+        body[data-theme="amethyst"] {
+            --bg-primary: linear-gradient(135deg, #1a1a2e, #2a1e3c, #3a2a4a);
+            --bg-secondary: rgba(106, 90, 205, 0.2);
+            --bg-card: rgba(106, 90, 205, 0.15);
+            --text-primary: #e6e6fa;
+            --accent: #9b59b6;
+            --gradient-start: #9b59b6;
+            --gradient-end: #8e44ad;
+        }
+        body[data-theme="sakura"] {
+            --bg-primary: linear-gradient(135deg, #ffb7c5, #ff8cae, #ff6b9d);
+            --bg-secondary: rgba(255, 200, 210, 0.25);
+            --bg-card: rgba(255, 200, 210, 0.18);
+            --text-primary: #4a1a2e;
+            --accent: #ff69b4;
+            --gradient-start: #ff69b4;
+            --gradient-end: #ff1493;
+        }
+        body[data-theme="ocean"] {
+            --bg-primary: linear-gradient(135deg, #0066cc, #0099ff, #00ccff);
+            --bg-secondary: rgba(0, 100, 150, 0.25);
+            --bg-card: rgba(0, 150, 200, 0.18);
+            --text-primary: #ffffff;
+            --accent: #00ffff;
+            --gradient-start: #00ffff;
+            --gradient-end: #00ccff;
         }
 
         body {
@@ -109,51 +116,20 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
 
-        /* Стеклянный режим iOS 26 */
+        /* Стеклянный режим */
         body.glass-mode {
-            --bg-secondary: rgba(255, 255, 255, 0.5);
-            --bg-card: rgba(255, 255, 255, 0.45);
-            --border: rgba(255, 255, 255, 0.7);
-            --status-bg: rgba(255, 255, 255, 0.35);
-            --feature-bg: rgba(255, 255, 255, 0.3);
+            --bg-secondary: rgba(255, 255, 255, 0.12);
+            --bg-card: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.25);
         }
-
-        body.glass-mode[data-theme="sunset"] {
-            --bg-secondary: rgba(45, 27, 58, 0.55);
-            --bg-card: rgba(45, 27, 58, 0.5);
-            --border: rgba(255, 200, 150, 0.5);
-        }
-
-        body.glass-mode[data-theme="space"] {
-            --bg-secondary: rgba(14, 26, 42, 0.55);
-            --bg-card: rgba(10, 20, 40, 0.5);
-        }
-
-        body.glass-mode[data-theme="neon"] {
-            --bg-secondary: rgba(17, 17, 17, 0.6);
-            --bg-card: rgba(20, 20, 30, 0.55);
-        }
-
-        body.glass-mode[data-theme="dark"] {
-            --bg-secondary: rgba(20, 24, 36, 0.6);
-            --bg-card: rgba(15, 20, 35, 0.55);
-        }
-
         body.glass-mode .card,
         body.glass-mode .proxy-card,
         body.glass-mode .status-panel,
         body.glass-mode .feature-item,
         body.glass-mode button:not(.circle-btn) {
             backdrop-filter: blur(var(--blur-amount)) saturate(180%) !important;
-            -webkit-backdrop-filter: blur(var(--blur-amount)) saturate(180%) !important;
             background: var(--bg-card) !important;
             border: 1px solid var(--border) !important;
-        }
-
-        body.glass-mode .circle-btn {
-            backdrop-filter: blur(15px) saturate(180%) !important;
-            background: linear-gradient(135deg, rgba(108, 78, 255, 0.7), rgba(90, 60, 232, 0.7)) !important;
-            border: 1px solid rgba(255, 255, 255, 0.4) !important;
         }
 
         /* Частицы */
@@ -167,30 +143,17 @@
             z-index: 0;
             overflow: hidden;
         }
-
         .particle {
             position: absolute;
             background: radial-gradient(circle, var(--accent), transparent);
             border-radius: 50%;
-            pointer-events: none;
             animation: floatParticle linear infinite;
         }
-
         @keyframes floatParticle {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-20vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
         }
 
         .container {
@@ -205,26 +168,49 @@
             flex-direction: column;
         }
 
-        /* Шапка */
+        /* АНИМАЦИИ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(108, 78, 255, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(108, 78, 255, 0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        @keyframes rotateAvatar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(10deg); }
+        }
+
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
-            gap: 12px;
-            animation: fadeInDown 0.5s ease;
+            gap: 8px;
+            animation: fadeInUp 0.5s ease;
         }
-
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-
         .logo-icon {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             border-radius: 50%;
             display: flex;
@@ -232,141 +218,76 @@
             justify-content: center;
             animation: pulseGlow 2s infinite;
         }
-
-        .logo-icon i {
-            font-size: 22px;
-            color: white;
-        }
-
+        .logo-icon i { font-size: 20px; color: white; }
         .logo-area h1 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            transition: background 0.3s ease;
         }
-
         .header-actions {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
-
-        /* АНИМАЦИИ ДЛЯ КНОПОК */
         .theme-toggle, .profile-btn, .gradient-select, .lang-select, .sound-toggle, .music-toggle, .glass-toggle {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
             border-radius: 40px;
-            padding: 8px 12px;
+            padding: 6px 10px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
+            gap: 5px;
+            font-size: 0.7rem;
             font-weight: 500;
-            color: var(--text-primary);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s;
             backdrop-filter: blur(5px);
-            position: relative;
-            overflow: hidden;
             animation: fadeInUp 0.4s ease backwards;
-            animation-delay: calc(var(--i, 0) * 0.05s);
         }
-
-        /* Эффект свечения при наведении */
-        .theme-toggle:hover, .gradient-select:hover, .lang-select:hover, 
+        .theme-toggle:hover, .profile-btn:hover, .gradient-select:hover, .lang-select:hover,
         .sound-toggle:hover, .music-toggle:hover, .glass-toggle:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-
-        /* Эффект нажатия */
         .theme-toggle:active, .profile-btn:active, .gradient-select:active, .lang-select:active,
         .sound-toggle:active, .music-toggle:active, .glass-toggle:active {
-            transform: scale(0.94);
-            transition: transform 0.1s ease;
+            transform: scale(0.95);
         }
-
-        /* Ripple эффект */
-        .theme-toggle::after, .profile-btn::after, .gradient-select::after, 
-        .lang-select::after, .sound-toggle::after, .music-toggle::after, 
-        .glass-toggle::after, .edit-name-btn::after, .circle-btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-            pointer-events: none;
-        }
-
-        .theme-toggle:active::after, .profile-btn:active::after, .gradient-select:active::after,
-        .lang-select:active::after, .sound-toggle:active::after, .music-toggle:active::after,
-        .glass-toggle:active::after, .edit-name-btn:active::after, .circle-btn:active::after {
-            width: 100px;
-            height: 100px;
-            opacity: 0;
-            transition: 0s;
-        }
-
         .profile-btn {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: white;
             border: none;
-            animation: gradientShift 3s ease infinite;
-            background-size: 200% 200%;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Карточки с анимацией */
         .card {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 20px;
+            border-radius: 24px;
+            padding: 16px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 0.5s ease backwards;
-            animation-delay: calc(var(--i, 0) * 0.1s);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .card h2 {
-            font-size: 1.2rem;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Круглая кнопка СТАРТ - усиленная анимация */
         .start-wrapper {
             display: flex;
             justify-content: center;
-            margin: 16px 0;
+            margin: 12px 0;
             position: relative;
         }
-
         .circle-btn {
-            width: 130px;
-            height: 130px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             background: linear-gradient(145deg, var(--gradient-start), var(--gradient-end));
             border: 2px solid rgba(255, 255, 255, 0.5);
@@ -375,364 +296,207 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 4px;
             box-shadow: var(--btn-shadow);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s;
             position: relative;
             z-index: 2;
-            animation: float 3s ease-in-out infinite, fadeInScale 0.5s ease;
+            animation: bounce 3s ease-in-out infinite, pulseGlow 2s infinite;
         }
-
-        .circle-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(108, 78, 255, 0.5);
-        }
-
-        .circle-btn:active {
-            transform: scale(0.94);
-            transition: transform 0.1s ease;
-        }
-
-        .circle-btn i {
-            font-size: 38px;
-            color: white;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease;
-        }
-
-        .circle-btn:hover i {
-            transform: scale(1.1);
-        }
-
+        .circle-btn:active { transform: scale(0.92); }
+        .circle-btn i { font-size: 32px; color: white; transition: transform 0.2s; }
+        .circle-btn:hover i { transform: scale(1.1); }
         .circle-btn span {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 800;
             color: white;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
         .pulse-ring {
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             background: var(--gradient-start);
             opacity: 0.4;
             animation: pulseRing 1.8s infinite;
             z-index: 1;
         }
-
         @keyframes pulseRing {
-            0% {
-                transform: scale(0.9);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(1.4);
-                opacity: 0;
-            }
+            0% { transform: scale(0.9); opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
         }
 
-        /* Статус панель */
         .status-panel {
             background: var(--status-bg);
             border-radius: 20px;
-            padding: 12px;
+            padding: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 16px;
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
+            gap: 8px;
+            margin-bottom: 12px;
         }
-
-        .status-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .status-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: #ff5e5e;
-            box-shadow: 0 0 6px #ff5e5e;
-            transition: all 0.2s;
             animation: pulseDot 2s infinite;
         }
-
-        .status-dot.active {
-            background: #3eff9e;
-            box-shadow: 0 0 10px #3eff9e;
-        }
-
+        .status-dot.active { background: #3eff9e; }
         @keyframes pulseDot {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.6; transform: scale(1.2); }
         }
 
-        /* Сетка функций */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-top: 12px;
+            gap: 6px;
+            margin-top: 10px;
         }
-
         .feature-item {
             background: var(--feature-bg);
             border-radius: 14px;
-            padding: 8px 4px;
+            padding: 6px 2px;
             text-align: center;
-            font-size: 0.7rem;
-            backdrop-filter: blur(4px);
-            transition: all 0.3s ease;
+            font-size: 0.65rem;
+            transition: all 0.3s;
             animation: fadeInUp 0.4s ease backwards;
-            animation-delay: calc(var(--i, 0) * 0.05s + 0.2s);
         }
-
         .feature-item:hover {
             transform: translateY(-3px);
             background: var(--accent);
             color: white;
         }
-
-        .feature-item:hover i {
-            color: white;
-        }
-
         .feature-item i {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--accent);
             display: block;
-            margin-bottom: 4px;
-            transition: transform 0.3s ease;
+            margin-bottom: 3px;
+            transition: transform 0.3s;
         }
-
         .feature-item:hover i {
             transform: scale(1.2);
+            color: white;
         }
-
         @media (max-width: 450px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* Профиль */
         .profile-info {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             flex-wrap: wrap;
         }
-
         .profile-avatar {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
-            transition: transform 0.3s ease;
-            animation: fadeInLeft 0.5s ease;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.5s ease;
+            cursor: pointer;
         }
-
+        /* АНИМАЦИЯ АВАТАРКИ - НАКЛОН ПРИ НАВЕДЕНИИ */
         .profile-avatar:hover {
-            transform: scale(1.05) rotate(5deg);
+            transform: rotate(10deg) scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
-
-        .profile-details {
-            flex: 1;
+        .profile-avatar:active {
+            transform: rotate(0deg) scale(0.95);
         }
-
-        .username-display {
-            font-size: 1.2rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
         .edit-name-btn {
             background: var(--feature-bg);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 4px 10px;
-            font-size: 0.7rem;
+            padding: 3px 8px;
+            font-size: 0.65rem;
             cursor: pointer;
-            color: var(--text-secondary);
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s;
         }
-
         .edit-name-btn:hover {
             transform: scale(1.05);
             background: var(--accent);
             color: white;
         }
-
         .user-id {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             opacity: 0.6;
             margin-top: 4px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
         }
-
         .user-id:hover {
             opacity: 1;
             transform: translateX(3px);
         }
 
-        /* Прокси карточка */
         .proxy-card {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
-            border-radius: 28px;
-            padding: 20px;
+            border-radius: 24px;
+            padding: 16px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             text-align: center;
-            opacity: 0.85;
-            transition: all 0.3s ease;
             animation: fadeInUp 0.5s ease;
+            transition: all 0.3s;
         }
-
         .proxy-card:hover {
             transform: translateY(-3px);
-            opacity: 1;
         }
-
-        .proxy-card h2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
         .proxy-card .coming-soon {
             background: var(--feature-bg);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 40px;
             display: inline-block;
-            margin-top: 12px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            margin-top: 8px;
+            font-size: 0.75rem;
             animation: pulse 2s infinite;
         }
-
-        /* Анимации */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(108, 78, 255, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 10px rgba(108, 78, 255, 0);
-            }
-        }
-
-        /* Toast */
         .toast {
             position: fixed;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: var(--bg-secondary);
             color: var(--text-primary);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 500;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             border: 1px solid var(--border);
             z-index: 2000;
             opacity: 0;
             transition: all 0.3s ease;
-            white-space: nowrap;
             backdrop-filter: blur(10px);
+            text-align: center;
         }
-
         .toast.show {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
         }
 
-        /* Модальные окна */
         .modal {
             position: fixed;
             top: 0;
@@ -749,105 +513,72 @@
             visibility: hidden;
             transition: 0.2s;
         }
-
         .modal.active {
             opacity: 1;
             visibility: visible;
         }
-
         .modal-content {
             background: var(--bg-secondary);
             border-radius: 28px;
-            padding: 24px;
-            max-width: 320px;
+            padding: 20px;
+            max-width: 300px;
             width: 85%;
             border: 1px solid var(--border);
             backdrop-filter: blur(20px);
             animation: fadeInScale 0.3s ease;
         }
-
         .modal-content input {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border-radius: 40px;
             border: 1px solid var(--border);
             background: var(--input-bg);
             color: var(--text-primary);
-            margin: 16px 0;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            margin: 12px 0;
+            font-size: 0.85rem;
+            transition: all 0.3s;
         }
-
         .modal-content input:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(108, 78, 255, 0.2);
+            box-shadow: 0 0 0 2px rgba(108, 78, 255, 0.3);
         }
-
         .modal-content button {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border-radius: 40px;
             border: none;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: white;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            transition: all 0.3s;
         }
-
         .modal-content button:hover {
             transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
         .close-modal {
             float: right;
             cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            transition: transform 0.2s ease;
+            font-size: 1.3rem;
+            transition: transform 0.2s;
         }
-
         .close-modal:hover {
             transform: rotate(90deg);
         }
 
-        .error-msg {
-            color: #ff5e5e;
-            font-size: 0.75rem;
-            margin-top: -8px;
-            margin-bottom: 12px;
-        }
-
-        .gradient-option, .lang-option {
-            margin-bottom: 10px;
-            padding: 12px;
-            border-radius: 40px;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s;
-            width: 100%;
-            text-align: center;
-        }
-
-        .gradient-option:hover, .lang-option:hover {
-            transform: scale(1.02);
-            filter: brightness(1.05);
-        }
-
         .footer {
             text-align: center;
-            margin-top: 16px;
-            font-size: 0.7rem;
+            margin-top: 12px;
+            font-size: 0.65rem;
             opacity: 0.6;
-            padding-bottom: 20px;
-            transition: all 0.3s;
+            padding-bottom: 16px;
             cursor: pointer;
+            transition: all 0.3s;
             animation: fadeInUp 0.6s ease;
         }
-
         .footer:hover {
             opacity: 0.9;
             transform: translateY(-2px);
@@ -866,28 +597,281 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
             opacity: 0;
             visibility: hidden;
-            transition: 0.2s;
         }
-
         .loader-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         .spinner {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border: 3px solid rgba(108, 78, 255, 0.3);
             border-top-color: var(--accent);
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        /* ========== СТИЛИ ДЛЯ КНОПОК ВЫБОРА СТИЛЯ ========== */
+        .theme-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 12px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .theme-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.3s ease backwards;
+        }
+        .theme-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .theme-card:active {
+            transform: scale(0.97);
+        }
+        .theme-icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+        .theme-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .theme-desc {
+            font-size: 0.55rem;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        /* ========== МЕНЮ ПРОКСИ ========== */
+        .proxy-menu-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .proxy-menu-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .proxy-menu-content {
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            border-radius: 28px;
+            padding: 20px;
+            max-width: 340px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: menuFadeIn 0.3s ease;
+        }
+        @keyframes menuFadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .proxy-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .proxy-menu-header h2 {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .close-proxy-menu {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .close-proxy-menu:hover {
+            transform: rotate(90deg);
+            background: var(--accent);
+        }
+        .close-proxy-menu:active {
+            transform: scale(0.9);
+        }
+        .promo-section {
+            margin-bottom: 16px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            animation: fadeInUp 0.4s ease;
+        }
+        .promo-section h3 {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+        }
+        .promo-input-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .promo-input-group input {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+        .promo-input-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(108, 78, 255, 0.3);
+        }
+        .promo-input-group button {
+            padding: 10px 16px;
+            border-radius: 40px;
+            border: none;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        .promo-input-group button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(108, 78, 255, 0.4);
+        }
+        .promo-input-group button:active {
+            transform: scale(0.96);
+        }
+        .promo-status {
+            font-size: 0.65rem;
+            margin-top: 8px;
+            padding: 4px 8px;
+            border-radius: 30px;
+            display: inline-block;
+            animation: fadeInUp 0.3s;
+        }
+        .promo-status.success {
+            background: rgba(62, 255, 158, 0.2);
+            color: #3eff9e;
+        }
+        .promo-status.error {
+            background: rgba(255, 94, 94, 0.2);
+            color: #ff5e5e;
+        }
+        /* СЕРВЕР ПОЯВЛЯЕТСЯ С АНИМАЦИЕЙ */
+        .server-section {
+            margin-top: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            animation: slideInRight 0.5s ease;
+        }
+        .server-section h4 {
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+        }
+        .server-details {
+            font-size: 0.7rem;
+            word-break: break-all;
+            margin-bottom: 10px;
+            padding: 6px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            font-family: monospace;
+        }
+        .connect-btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 40px;
+            border: none;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.3s;
+            animation: pulseGlow 1.5s infinite;
+        }
+        .connect-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(108, 78, 255, 0.4);
+        }
+        .connect-btn:active {
+            transform: scale(0.97);
+        }
+        .tg-btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 40px;
+            border: none;
+            background: linear-gradient(135deg, #0088cc, #00aaff);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        .tg-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+        }
+        .tg-btn:active {
+            transform: scale(0.97);
         }
     </style>
 </head>
@@ -898,50 +882,28 @@
 <div class="container">
     <div class="header">
         <div class="logo-area">
-            <div class="logo-icon">
-                <i class="fas fa-feather-alt"></i>
-            </div>
-            <h1>Angel VPN</h1>
+            <div class="logo-icon"><i class="fas fa-feather-alt"></i></div>
+            <h1 id="logoTitle">Angel VPN</h1>
         </div>
         <div class="header-actions">
-            <button class="sound-toggle" id="soundToggle" title="Звуки кнопок" style="--i:1">
-                <i class="fas fa-volume-up"></i>
-            </button>
-            <button class="music-toggle" id="musicToggle" title="Фоновая музыка" style="--i:2">
-                <i class="fas fa-music"></i>
-            </button>
-            <button class="glass-toggle" id="glassToggle" title="Стеклянные кнопки" style="--i:3">
-                <i class="fas fa-border-all"></i>
-            </button>
-            <button class="lang-select" id="langSelect" style="--i:4">
-                <i class="fas fa-globe"></i>
-                <span id="langBtnText">RU</span>
-            </button>
-            <button class="gradient-select" id="gradientSelect" style="--i:5">
-                <i class="fas fa-palette"></i>
-                <span id="styleBtnText">Стиль</span>
-            </button>
-            <button class="theme-toggle" id="themeToggle" style="--i:6">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="profile-btn" id="profileBtn" style="--i:7">
-                <i class="fas fa-user"></i>
-            </button>
+            <button class="sound-toggle" id="soundToggle"><i class="fas fa-volume-up"></i></button>
+            <button class="music-toggle" id="musicToggle"><i class="fas fa-music"></i></button>
+            <button class="glass-toggle" id="glassToggle"><i class="fas fa-border-all"></i></button>
+            <button class="lang-select" id="langSelect"><i class="fas fa-globe"></i><span id="langBtnText">RU</span></button>
+            <button class="gradient-select" id="gradientSelect"><i class="fas fa-palette"></i><span id="styleBtnText">Стиль</span></button>
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            <button class="profile-btn" id="profileBtn"><i class="fas fa-user"></i></button>
         </div>
     </div>
 
-    <div class="card" style="--i:1">
+    <div class="card">
         <div class="status-panel">
             <div class="status-info">
                 <div class="status-dot" id="statusDot"></div>
                 <span id="statusText">Готов к работе</span>
             </div>
-            <div class="latency" style="font-size:0.75rem">
-                <i class="fas fa-waveform"></i>
-                <span id="latencyValue">23</span> мс
-            </div>
+            <div class="latency"><i class="fas fa-waveform"></i><span id="latencyValue">23</span> мс</div>
         </div>
-        
         <div class="start-wrapper">
             <div class="pulse-ring"></div>
             <button class="circle-btn" id="startBtn">
@@ -949,63 +911,84 @@
                 <span id="startBtnText">СТАРТ</span>
             </button>
         </div>
-        
         <div class="features-grid">
-            <div class="feature-item" style="--i:1"><i class="fas fa-bolt"></i> <span id="feature1">Обход DPI</span></div>
-            <div class="feature-item" style="--i:2"><i class="fas fa-clock"></i> <span id="feature2">Низкая задержка</span></div>
-            <div class="feature-item" style="--i:3"><i class="fas fa-unlock-alt"></i> <span id="feature3">Без белых списков</span></div>
-            <div class="feature-item" style="--i:4"><i class="fab fa-telegram"></i> <span id="feature4">Telegram доступ</span></div>
+            <div class="feature-item"><i class="fas fa-bolt"></i><span id="feature1">Обход DPI</span></div>
+            <div class="feature-item"><i class="fas fa-clock"></i><span id="feature2">Низкая задержка</span></div>
+            <div class="feature-item"><i class="fas fa-unlock-alt"></i><span id="feature3">Без белых списков</span></div>
+            <div class="feature-item"><i class="fab fa-telegram"></i><span id="feature4">Telegram доступ</span></div>
         </div>
     </div>
 
-    <div class="proxy-card" style="--i:2">
-        <h2><i class="fab fa-telegram"></i> <span id="proxyTitle">Прокси ключи для ТГ</span></h2>
-        <div class="coming-soon" id="comingSoonText">
-            <i class="fas fa-clock"></i> Скоро будет доступно
-        </div>
-        <p style="margin-top: 12px; font-size: 0.8rem;" id="unavailableText">🚫 Пока недоступно</p>
+    <div class="proxy-card">
+        <h2><i class="fab fa-telegram"></i><span id="proxyTitle">Прокси ключи для ТГ</span></h2>
+        <div class="coming-soon"><i class="fas fa-clock"></i> <span id="startHint">Нажми СТАРТ чтобы открыть</span></div>
     </div>
 
-    <div class="card" style="--i:3">
-        <h2><i class="fas fa-id-card"></i> <span id="cabinetTitle">Личный кабинет</span></h2>
-        
+    <div class="card">
+        <h2><i class="fas fa-id-card"></i><span id="cabinetTitle">Личный кабинет</span></h2>
         <div class="profile-info">
             <div class="profile-avatar" id="avatarLetter">A</div>
             <div class="profile-details">
                 <div class="username-display">
                     <span id="usernameDisplay">AngelUser</span>
-                    <button class="edit-name-btn" id="editNameBtn">
-                        <i class="fas fa-pen"></i> <span id="editBtnText">изменить</span>
-                    </button>
+                    <button class="edit-name-btn" id="editNameBtn"><i class="fas fa-pen"></i><span id="editBtnText">изменить</span></button>
                 </div>
-                <div class="user-id" id="copyIdBtn">
-                    <i class="fas fa-id-badge"></i> ID: <span id="userId">12345</span>
-                    <i class="fas fa-copy" style="font-size: 0.7rem; opacity: 0.5;"></i>
-                </div>
+                <div class="user-id" id="copyIdBtn"><i class="fas fa-id-badge"></i> ID: <span id="userId">12345</span><i class="fas fa-copy"></i></div>
             </div>
         </div>
     </div>
 
-    <div class="footer" id="quoteFooter">
-        <i class="fas fa-feather-alt"></i> <span id="quoteText">Angel VPN — твоя защита в любой точке мира</span>
+    <div class="footer" id="quoteFooter"><i class="fas fa-feather-alt"></i><span id="quoteText">Angel VPN — твоя защита в любой точке мира</span></div>
+</div>
+
+<!-- МЕНЮ ПРОКСИ -->
+<div id="proxyMenuModal" class="proxy-menu-modal">
+    <div class="proxy-menu-content">
+        <div class="proxy-menu-header">
+            <h2><i class="fas fa-key"></i><span id="proxyMenuTitle">Доступ к прокси</span></h2>
+            <button class="close-proxy-menu" id="closeProxyMenu"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="promo-section">
+            <h3><i class="fas fa-ticket-alt"></i><span id="promoTitle">Введите промокод</span></h3>
+            <div class="promo-input-group">
+                <input type="text" id="promoCodeInput" placeholder="Промокод" autocomplete="off">
+                <button id="applyPromoBtn"><i class="fas fa-check"></i><span id="applyBtnText">Активировать</span></button>
+            </div>
+            <div id="promoStatus" class="promo-status" style="display:none"></div>
+        </div>
+
+        <!-- СЕРВЕР И КНОПКА ПОДКЛЮЧЕНИЯ ПОЯВЛЯЮТСЯ ТОЛЬКО ПОСЛЕ АКТИВАЦИИ ПРОМОКОДА -->
+        <div id="serverSection" class="server-section" style="display: none;">
+            <h4><i class="fas fa-crown"></i> <span id="serverTitle">Премиум сервер</span></h4>
+            <div class="server-details">
+                <i class="fas fa-map-marker-alt"></i> <span id="serverLocation">Россия</span><br>
+                <i class="fas fa-server"></i> <span id="serverAddress">37.139.42.140:443</span><br>
+                <i class="fas fa-key"></i> <span id="serverSecret">secret: f5199e949c0f23bc887581218ad8c1e6</span>
+            </div>
+            <button class="connect-btn" id="premiumConnectBtn" data-proxy="tg://proxy?server=37.139.42.140&port=443&secret=f5199e949c0f23bc887581218ad8c1e6">
+                <i class="fab fa-telegram"></i> <span id="connectBtnText">Подключиться</span>
+            </button>
+        </div>
+
+        <button class="tg-btn" id="telegramRedirectBtn"><i class="fab fa-telegram"></i><span id="tgBtnText">Перейти в Telegram</span><i class="fas fa-external-link-alt"></i></button>
     </div>
 </div>
 
-<div id="loaderOverlay" class="loader-overlay">
-    <div class="spinner"></div>
-    <div id="loaderText">Подключение к Angel VPN...</div>
-</div>
-
+<!-- МОДАЛЬНОЕ ОКНО ВЫБОРА СТИЛЯ -->
 <div id="gradientModal" class="modal">
     <div class="modal-content">
         <span class="close-modal" id="closeGradientModal">&times;</span>
         <h3 id="styleModalTitle"><i class="fas fa-palette"></i> Выбери стиль</h3>
-        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
-            <button class="gradient-option" data-theme="default" style="background: linear-gradient(135deg, #6c4eff, #5a3ce8); color: white;">👼 Ангельский</button>
-            <button class="gradient-option" data-theme="sunset" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53); color: white;">🌅 Закат</button>
-            <button class="gradient-option" data-theme="space" style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white;">🚀 Космос</button>
-            <button class="gradient-option" data-theme="neon" style="background: linear-gradient(135deg, #00ff9d, #00ffcc); color: black;">💚 Неон</button>
-            <button class="gradient-option" data-theme="dark" style="background: linear-gradient(135deg, #8a6eff, #6c4eff); color: white;">🌙 Темная</button>
+        <div class="theme-options">
+            <div class="theme-card" data-theme="default"><div class="theme-icon">👼</div><div class="theme-name">Ангельский</div><div class="theme-desc">Светлый, нежный</div></div>
+            <div class="theme-card" data-theme="sunset"><div class="theme-icon">🌅</div><div class="theme-name">Закат</div><div class="theme-desc">Тёплый, уютный</div></div>
+            <div class="theme-card" data-theme="space"><div class="theme-icon">🚀</div><div class="theme-name">Космос</div><div class="theme-desc">Глубокий, звёздный</div></div>
+            <div class="theme-card" data-theme="neon"><div class="theme-icon">💚</div><div class="theme-name">Неон</div><div class="theme-desc">Яркий, дерзкий</div></div>
+            <div class="theme-card" data-theme="dark"><div class="theme-icon">🌙</div><div class="theme-name">Тёмная</div><div class="theme-desc">Строгий, элегантный</div></div>
+            <div class="theme-card" data-theme="amethyst"><div class="theme-icon">💜</div><div class="theme-name">Аметист</div><div class="theme-desc">Магический, мистический</div></div>
+            <div class="theme-card" data-theme="sakura"><div class="theme-icon">🌸</div><div class="theme-name">Сакура</div><div class="theme-desc">Нежный, романтичный</div></div>
+            <div class="theme-card" data-theme="ocean"><div class="theme-icon">🌊</div><div class="theme-name">Океан</div><div class="theme-desc">Свежий, глубокий</div></div>
         </div>
     </div>
 </div>
@@ -1014,9 +997,9 @@
     <div class="modal-content">
         <span class="close-modal" id="closeLangModal">&times;</span>
         <h3 id="langModalTitle"><i class="fas fa-language"></i> Выбери язык</h3>
-        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
-            <button class="lang-option" data-lang="ru" style="background: var(--feature-bg); color: var(--text-primary);">🇷🇺 Русский</button>
-            <button class="lang-option" data-lang="en" style="background: var(--feature-bg); color: var(--text-primary);">🇬🇧 English</button>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
+            <button class="lang-option" data-lang="ru" style="background: var(--feature-bg); color: var(--text-primary); padding: 10px; border-radius: 40px; cursor: pointer;">🇷🇺 Русский</button>
+            <button class="lang-option" data-lang="en" style="background: var(--feature-bg); color: var(--text-primary); padding: 10px; border-radius: 40px; cursor: pointer;">🇬🇧 English</button>
         </div>
     </div>
 </div>
@@ -1025,522 +1008,296 @@
     <div class="modal-content">
         <span class="close-modal" id="closeNameModal">&times;</span>
         <h3 id="nameModalTitle">Изменить имя</h3>
-        <input type="text" id="newUsername" placeholder="Введите новое имя" maxlength="20">
+        <input type="text" id="newUsername" maxlength="20">
         <div id="nameError" class="error-msg"></div>
         <button id="saveNameBtn">Сохранить</button>
     </div>
 </div>
 
+<div id="loaderOverlay" class="loader-overlay"><div class="spinner"></div><div id="loaderText">Подключение к Angel VPN...</div></div>
 <div id="toast" class="toast"></div>
 
 <script>
-    // ==================== РАНДОМНЫЙ НИК ДЛЯ НОВЫХ ПОЛЬЗОВАТЕЛЕЙ ====================
-    const randomNames = [
-        "АнгелХранитель", "НебесныйСтранник", "СветлыйПутник", "ЛунныйЛуч", "ЗвездныйВетер",
-        "AngelWings", "SkyGuardian", "LightBringer", "MoonWalker", "StarDust",
-        "Крылатый", "БелыйФеникс", "Облачный", "Рассветный", "Вечерний",
-        "NightAngel", "DayDreamer", "SilverGhost", "GoldenRay", "CrystalHeart"
-    ];
+    // ========== РАНДОМНЫЙ НИК ==========
+    const randomNames = ["StarGuardian", "SkyWalker", "MoonLight", "AngelHeart", "NightWing", "CloudRider", "SunBeam", "StarDust", "IcePhoenix", "DarkKnight", "LightBringer", "ShadowHunter", "CrystalFrost", "ThunderBolt", "SilverGhost"];
+    function generateRandomName() { return `${randomNames[Math.floor(Math.random()*randomNames.length)]}${Math.floor(Math.random()*1000)}`; }
     
-    function generateRandomName() {
-        const randomIndex = Math.floor(Math.random() * randomNames.length);
-        const randomNumber = Math.floor(Math.random() * 1000);
-        return `${randomNames[randomIndex]}${randomNumber}`;
+    // ========== ПРОМОКОД ==========
+    let isPremiumUnlocked = localStorage.getItem('premium_unlocked') === 'true';
+    const CORRECT_PROMO = "13dec";
+    
+    function applyPromoCode() {
+        const input = document.getElementById('promoCodeInput');
+        const code = input.value.trim().toLowerCase();
+        const statusDiv = document.getElementById('promoStatus');
+        if (code === CORRECT_PROMO) {
+            isPremiumUnlocked = true;
+            localStorage.setItem('premium_unlocked', 'true');
+            statusDiv.textContent = currentLang === 'ru' ? '✅ Промокод активирован!' : '✅ Promo code activated!';
+            statusDiv.className = 'promo-status success';
+            statusDiv.style.display = 'inline-block';
+            showServerSection();
+            playUnlockSound();
+            showToast(currentLang === 'ru' ? '🎉 Премиум сервер разблокирован! Россия' : '🎉 Premium server unlocked! Russia');
+            setTimeout(() => { statusDiv.style.display = 'none'; }, 2500);
+        } else if (code === "") {
+            statusDiv.style.display = 'none';
+        } else {
+            statusDiv.textContent = currentLang === 'ru' ? '❌ Неверный промокод' : '❌ Invalid promo code';
+            statusDiv.className = 'promo-status error';
+            statusDiv.style.display = 'inline-block';
+            playErrorSound();
+            setTimeout(() => { statusDiv.style.display = 'none'; }, 2000);
+        }
+        input.value = '';
     }
     
-    // ==================== ЗВУКИ И МУЗЫКА (ТОЛЬКО ТВОЙ ТРЕК) ====================
+    function showServerSection() {
+        const serverSection = document.getElementById('serverSection');
+        if (serverSection) {
+            serverSection.style.display = 'block';
+            serverSection.style.animation = 'slideInRight 0.5s ease';
+        }
+    }
+    
+    function openProxyMenu() {
+        document.getElementById('proxyMenuModal').classList.add('active');
+        playClickSound();
+        updateLanguageForMenu();
+        if (isPremiumUnlocked) {
+            showServerSection();
+        }
+    }
+    function closeProxyMenu() {
+        document.getElementById('proxyMenuModal').classList.remove('active');
+        playClickSound();
+    }
+    function connectToProxy(proxyUrl) {
+        window.location.href = proxyUrl;
+        playSuccessSound();
+    }
+    function redirectToTelegramChat() {
+        window.location.href = 'https://t.me/angelvpns';
+        playClickSound();
+    }
+    
+    // ========== ЗВУКИ ==========
     let audioContext = null;
     let isSoundEnabled = localStorage.getItem('sound_enabled') !== 'false';
     let isMusicEnabled = localStorage.getItem('music_enabled') !== 'false';
     let isMusicPlaying = false;
     let currentAudio = null;
-    
     const MUSIC_URL = "https://www.chosic.com/wp-content/uploads/2022/01/Evening-Improvisation-with-Ethera(chosic.com).mp3";
     
-    function initAudio() {
-        if (!audioContext && isSoundEnabled) {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioContext.state === 'suspended') {
-                audioContext.resume();
-            }
-        }
-    }
+    function initAudio() { if (!audioContext && isSoundEnabled) { audioContext = new (window.AudioContext||window.webkitAudioContext)(); if(audioContext.state==='suspended') audioContext.resume(); } }
+    function playClickSound() { if(!isSoundEnabled) return; try{ initAudio(); if(!audioContext) return; const now=audioContext.currentTime, gain=audioContext.createGain(); gain.connect(audioContext.destination); gain.gain.value=0.2; const osc=audioContext.createOscillator(); osc.connect(gain); osc.frequency.value=880; osc.start(now); gain.gain.exponentialRampToValueAtTime(0.00001,now+0.1); osc.stop(now+0.1); }catch(e){} }
+    function playSuccessSound() { if(!isSoundEnabled) return; try{ initAudio(); if(!audioContext) return; const now=audioContext.currentTime, gain=audioContext.createGain(); gain.connect(audioContext.destination); gain.gain.value=0.25; [523.25,659.25,783.99].forEach((f,i)=>{ const osc=audioContext.createOscillator(); osc.connect(gain); osc.frequency.value=f; osc.start(now+i*0.1); osc.stop(now+i*0.1+0.2); }); gain.gain.exponentialRampToValueAtTime(0.00001,now+0.4); }catch(e){} }
+    function playErrorSound() { if(!isSoundEnabled) return; try{ initAudio(); if(!audioContext) return; const now=audioContext.currentTime, gain=audioContext.createGain(); gain.connect(audioContext.destination); gain.gain.value=0.2; const osc=audioContext.createOscillator(); osc.connect(gain); osc.frequency.value=440; osc.start(now); gain.gain.exponentialRampToValueAtTime(0.00001,now+0.3); osc.stop(now+0.3); }catch(e){} }
+    function playUnlockSound() { if(!isSoundEnabled) return; try{ initAudio(); if(!audioContext) return; const now=audioContext.currentTime, gain=audioContext.createGain(); gain.connect(audioContext.destination); gain.gain.value=0.25; [523.25,659.25,783.99,1046.5].forEach((f,i)=>{ const osc=audioContext.createOscillator(); osc.connect(gain); osc.frequency.value=f; osc.start(now+i*0.12); osc.stop(now+i*0.12+0.25); }); gain.gain.exponentialRampToValueAtTime(0.00001,now+0.6); }catch(e){} }
+    function playThemeSound() { if(!isSoundEnabled) return; try{ initAudio(); if(!audioContext) return; const now=audioContext.currentTime, gain=audioContext.createGain(); gain.connect(audioContext.destination); gain.gain.value=0.2; const osc=audioContext.createOscillator(); osc.connect(gain); osc.frequency.value=587.33; osc.start(now); gain.gain.exponentialRampToValueAtTime(0.00001,now+0.2); osc.stop(now+0.2); }catch(e){} }
+    function loadExternalMusic() { if(!isMusicEnabled) return; if(currentAudio) currentAudio.pause(); currentAudio=new Audio(MUSIC_URL); currentAudio.loop=true; currentAudio.volume=0.2; currentAudio.play().catch(e=>console.log); return currentAudio; }
+    function startMusic() { if(!isMusicEnabled||isMusicPlaying) return; loadExternalMusic(); isMusicPlaying=true; }
+    function stopMusic() { isMusicPlaying=false; if(currentAudio){ currentAudio.pause(); currentAudio=null; } }
+    function toggleSound() { isSoundEnabled=!isSoundEnabled; localStorage.setItem('sound_enabled',isSoundEnabled); document.getElementById('soundToggle').innerHTML=isSoundEnabled?'<i class="fas fa-volume-up"></i>':'<i class="fas fa-volume-mute"></i>'; if(isSoundEnabled) playSuccessSound(); showToast(isSoundEnabled?'🔊 Звуки включены':'🔇 Звуки выключены'); }
+    function toggleMusic() { isMusicEnabled=!isMusicEnabled; localStorage.setItem('music_enabled',isMusicEnabled); const btn=document.getElementById('musicToggle'); if(isMusicEnabled){ btn.innerHTML='<i class="fas fa-music"></i>'; startMusic(); showToast('🎵 Музыка включена'); }else{ btn.innerHTML='<i class="fas fa-music-slash"></i>'; stopMusic(); showToast('🎵 Музыка выключена'); } }
     
-    function playClickSound() {
-        if (!isSoundEnabled) return;
-        try {
-            initAudio();
-            if (!audioContext) return;
-            const now = audioContext.currentTime;
-            const gainNode = audioContext.createGain();
-            gainNode.connect(audioContext.destination);
-            gainNode.gain.value = 0.25;
-            const osc = audioContext.createOscillator();
-            osc.connect(gainNode);
-            osc.frequency.value = 880;
-            osc.start(now);
-            gainNode.gain.exponentialRampToValueAtTime(0.00001, now + 0.15);
-            osc.stop(now + 0.15);
-        } catch(e) { console.log('Audio error:', e); }
-    }
-    
-    function playSuccessSound() {
-        if (!isSoundEnabled) return;
-        try {
-            initAudio();
-            if (!audioContext) return;
-            const now = audioContext.currentTime;
-            const gainNode = audioContext.createGain();
-            gainNode.connect(audioContext.destination);
-            gainNode.gain.value = 0.3;
-            [523.25, 659.25, 783.99].forEach((freq, i) => {
-                const osc = audioContext.createOscillator();
-                osc.connect(gainNode);
-                osc.frequency.value = freq;
-                osc.start(now + i * 0.1);
-                osc.stop(now + i * 0.1 + 0.2);
-            });
-            gainNode.gain.exponentialRampToValueAtTime(0.00001, now + 0.5);
-        } catch(e) {}
-    }
-    
-    // Только твоя музыка, никакой встроенной
-    function loadExternalMusic() {
-        if (!isMusicEnabled) return;
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio = null;
-        }
-        currentAudio = new Audio(MUSIC_URL);
-        currentAudio.loop = true;
-        currentAudio.volume = 0.25;
-        currentAudio.play().catch(e => console.log('Auto-play prevented:', e));
-        return currentAudio;
-    }
-    
-    function startMusic() {
-        if (!isMusicEnabled) return;
-        if (isMusicPlaying) return;
-        loadExternalMusic();
-        isMusicPlaying = true;
-    }
-    
-    function stopMusic() {
-        isMusicPlaying = false;
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio = null;
-        }
-    }
-    
-    function toggleSound() {
-        isSoundEnabled = !isSoundEnabled;
-        localStorage.setItem('sound_enabled', isSoundEnabled);
-        const soundBtn = document.getElementById('soundToggle');
-        if (isSoundEnabled) {
-            soundBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-            playSuccessSound();
-        } else {
-            soundBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        }
-        showToast(isSoundEnabled ? '🔊 Звуки включены' : '🔇 Звуки выключены');
-    }
-    
-    function toggleMusic() {
-        isMusicEnabled = !isMusicEnabled;
-        localStorage.setItem('music_enabled', isMusicEnabled);
-        const musicBtn = document.getElementById('musicToggle');
-        if (isMusicEnabled) {
-            musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-            startMusic();
-            showToast('🎵 Музыка включена');
-        } else {
-            musicBtn.innerHTML = '<i class="fas fa-music-slash"></i>';
-            stopMusic();
-            showToast('🎵 Музыка выключена');
-        }
-    }
-    
-    // ==================== СТЕКЛЯННЫЙ РЕЖИМ iOS 26 ====================
+    // ========== СТЕКЛЯННЫЙ РЕЖИМ ==========
     let isGlassMode = localStorage.getItem('glass_mode') === 'true';
+    function toggleGlassMode() { isGlassMode=!isGlassMode; localStorage.setItem('glass_mode',isGlassMode); const btn=document.getElementById('glassToggle'); if(isGlassMode){ document.body.classList.add('glass-mode'); btn.innerHTML='<i class="fas fa-border-all" style="color:var(--accent);"></i>'; showToast('✨ Стеклянный режим включен'); }else{ document.body.classList.remove('glass-mode'); btn.innerHTML='<i class="fas fa-border-all"></i>'; showToast('✨ Стеклянный режим выключен'); } playClickSound(); }
+    if(isGlassMode){ document.body.classList.add('glass-mode'); document.getElementById('glassToggle').innerHTML='<i class="fas fa-border-all" style="color:var(--accent);"></i>'; }
     
-    function toggleGlassMode() {
-        isGlassMode = !isGlassMode;
-        localStorage.setItem('glass_mode', isGlassMode);
-        const glassBtn = document.getElementById('glassToggle');
-        if (isGlassMode) {
-            document.body.classList.add('glass-mode');
-            glassBtn.innerHTML = '<i class="fas fa-border-all" style="color: var(--accent);"></i>';
-            showToast('✨ Стеклянный режим iOS 26 включен');
-        } else {
-            document.body.classList.remove('glass-mode');
-            glassBtn.innerHTML = '<i class="fas fa-border-all"></i>';
-            showToast('✨ Стеклянный режим выключен');
-        }
-        playClickSound();
-    }
-    
-    if (isGlassMode) {
-        document.body.classList.add('glass-mode');
-        document.getElementById('glassToggle').innerHTML = '<i class="fas fa-border-all" style="color: var(--accent);"></i>';
-    }
-    
-    // ==================== ЯЗЫКИ ====================
-    const translations = {
+    // ========== ПЕРЕВОД ==========
+    const translations={
         ru: {
-            langBtn: "RU", styleBtn: "Стиль", statusReady: "Готов к работе", startBtn: "СТАРТ",
-            feature1: "Обход DPI", feature2: "Низкая задержка", feature3: "Без белых списков", feature4: "Telegram доступ",
-            proxyTitle: "Прокси ключи для ТГ", comingSoon: "Скоро будет доступно", unavailable: "🚫 Пока недоступно",
-            cabinetTitle: "Личный кабинет", editBtn: "изменить", styleModalTitle: "Выбери стиль", langModalTitle: "Выбери язык",
-            nameModalTitle: "Изменить имя", namePlaceholder: "Введите новое имя", saveBtn: "Сохранить",
-            nameEmpty: "Имя не может быть пустым", nameShort: "Имя должно содержать минимум 2 символа",
-            nameLong: "Имя не может быть длиннее 20 символов", nameTaken: "❌ Это имя уже занято! Выберите другое.",
-            nameChanged: "✅ Имя изменено на", idCopied: "📋 ID скопирован:", themeChanged: "🎨 Стиль:",
-            lightTheme: "☀️ Светлая тема", darkTheme: "🌙 Темная тема",
-            connecting: "Подключение к Angel VPN...", bypassing: "Обход белых списков...", redirecting: "Перенаправление в Telegram...",
-            quotes: ["Angel VPN — твоя защита в любой точке мира", "Обходи блокировки с Angel VPN", "Быстрый и безопасный интернет", "Твоя конфиденциальность — наш приоритет", "Angel VPN — доступ без границ"]
+            langBtn:"RU",styleBtn:"Стиль",statusReady:"Готов к работе",startBtn:"СТАРТ",
+            feature1:"Обход DPI",feature2:"Низкая задержка",feature3:"Без белых списков",feature4:"Telegram доступ",
+            proxyTitle:"Прокси ключи для ТГ",startHint:"Нажми СТАРТ чтобы открыть",
+            cabinetTitle:"Личный кабинет",editBtn:"изменить",
+            proxyMenuTitle:"Доступ к прокси",promoTitle:"Введите промокод",applyBtnText:"Активировать",
+            serverTitle:"Премиум сервер",connectBtnText:"Подключиться",
+            tgBtnText:"Перейти в Telegram",promoPlaceholder:"Промокод",
+            styleModalTitle:"Выбери стиль",langModalTitle:"Выбери язык",
+            nameModalTitle:"Изменить имя",namePlaceholder:"Введите новое имя",saveBtn:"Сохранить",
+            nameEmpty:"Имя не может быть пустым",nameShort:"Имя должно содержать минимум 2 символа",
+            nameLong:"Имя не может быть длиннее 20 символов",nameTaken:"❌ Это имя уже занято!",
+            nameChanged:"✅ Имя изменено на",idCopied:"📋 ID скопирован:",themeChanged:"🎨 Стиль:",
+            lightTheme:"☀️ Светлая тема",darkTheme:"🌙 Темная тема",
+            serverLocation:"Россия",serverAddress:"37.139.42.140:443",serverSecret:"secret: f5199e949c0f23bc887581218ad8c1e6",
+            quotes:["Angel VPN — твоя защита","Обходи блокировки с Angel VPN","Быстрый и безопасный интернет","Твоя конфиденциальность — наш приоритет","Angel VPN — доступ без границ"]
         },
         en: {
-            langBtn: "EN", styleBtn: "Style", statusReady: "Ready to work", startBtn: "START",
-            feature1: "Bypass DPI", feature2: "Low latency", feature3: "No white lists", feature4: "Telegram access",
-            proxyTitle: "Proxy keys for TG", comingSoon: "Coming soon", unavailable: "🚫 Currently unavailable",
-            cabinetTitle: "Personal cabinet", editBtn: "edit", styleModalTitle: "Choose style", langModalTitle: "Choose language",
-            nameModalTitle: "Change name", namePlaceholder: "Enter new name", saveBtn: "Save",
-            nameEmpty: "Name cannot be empty", nameShort: "Name must be at least 2 characters",
-            nameLong: "Name cannot be longer than 20 characters", nameTaken: "❌ This name is already taken! Choose another.",
-            nameChanged: "✅ Name changed to", idCopied: "📋 ID copied:", themeChanged: "🎨 Theme:",
-            lightTheme: "☀️ Light theme", darkTheme: "🌙 Dark theme",
-            connecting: "Connecting to Angel VPN...", bypassing: "Bypassing white lists...", redirecting: "Redirecting to Telegram...",
-            quotes: ["Angel VPN — your protection anywhere", "Bypass blocks with Angel VPN", "Fast and secure internet", "Your privacy is our priority", "Angel VPN — access without borders"]
+            langBtn:"EN",styleBtn:"Style",statusReady:"Ready to work",startBtn:"START",
+            feature1:"Bypass DPI",feature2:"Low latency",feature3:"No white lists",feature4:"Telegram access",
+            proxyTitle:"Proxy keys for TG",startHint:"Press START to open",
+            cabinetTitle:"Personal cabinet",editBtn:"edit",
+            proxyMenuTitle:"Proxy access",promoTitle:"Enter promo code",applyBtnText:"Activate",
+            serverTitle:"Premium server",connectBtnText:"Connect",
+            tgBtnText:"Go to Telegram",promoPlaceholder:"Promo code",
+            styleModalTitle:"Choose style",langModalTitle:"Choose language",
+            nameModalTitle:"Change name",namePlaceholder:"Enter new name",saveBtn:"Save",
+            nameEmpty:"Name cannot be empty",nameShort:"Name must be at least 2 characters",
+            nameLong:"Name cannot be longer than 20 characters",nameTaken:"❌ This name is already taken!",
+            nameChanged:"✅ Name changed to",idCopied:"📋 ID copied:",themeChanged:"🎨 Theme:",
+            lightTheme:"☀️ Light theme",darkTheme:"🌙 Dark theme",
+            serverLocation:"Russia",serverAddress:"37.139.42.140:443",serverSecret:"secret: f5199e949c0f23bc887581218ad8c1e6",
+            quotes:["Angel VPN — your protection","Bypass blocks with Angel VPN","Fast and secure internet","Your privacy is our priority","Angel VPN — access without borders"]
         }
     };
+    let currentLang=localStorage.getItem('app_lang')||'ru';
     
-    let currentLang = localStorage.getItem('app_lang') || 'ru';
-    
-    function updateLanguage() {
-        const t = translations[currentLang];
-        document.getElementById('langBtnText').textContent = t.langBtn;
-        document.getElementById('styleBtnText').textContent = t.styleBtn;
-        document.getElementById('statusText').textContent = t.statusReady;
-        document.getElementById('startBtnText').textContent = t.startBtn;
-        document.getElementById('feature1').textContent = t.feature1;
-        document.getElementById('feature2').textContent = t.feature2;
-        document.getElementById('feature3').textContent = t.feature3;
-        document.getElementById('feature4').textContent = t.feature4;
-        document.getElementById('proxyTitle').textContent = t.proxyTitle;
-        document.getElementById('comingSoonText').innerHTML = `<i class="fas fa-clock"></i> ${t.comingSoon}`;
-        document.getElementById('unavailableText').textContent = t.unavailable;
-        document.getElementById('cabinetTitle').textContent = t.cabinetTitle;
-        document.getElementById('editBtnText').textContent = t.editBtn;
-        document.getElementById('styleModalTitle').innerHTML = `<i class="fas fa-palette"></i> ${t.styleModalTitle}`;
-        document.getElementById('langModalTitle').innerHTML = `<i class="fas fa-language"></i> ${t.langModalTitle}`;
-        document.getElementById('nameModalTitle').textContent = t.nameModalTitle;
-        document.getElementById('newUsername').placeholder = t.namePlaceholder;
-        document.getElementById('saveNameBtn').textContent = t.saveBtn;
-        const quoteIndex = Math.floor(Math.random() * t.quotes.length);
-        document.getElementById('quoteText').textContent = t.quotes[quoteIndex];
+    function updateLanguage(){
+        const t=translations[currentLang];
+        document.getElementById('langBtnText').textContent=t.langBtn;
+        document.getElementById('styleBtnText').textContent=t.styleBtn;
+        document.getElementById('statusText').textContent=t.statusReady;
+        document.getElementById('startBtnText').textContent=t.startBtn;
+        document.getElementById('feature1').textContent=t.feature1;
+        document.getElementById('feature2').textContent=t.feature2;
+        document.getElementById('feature3').textContent=t.feature3;
+        document.getElementById('feature4').textContent=t.feature4;
+        document.getElementById('proxyTitle').textContent=t.proxyTitle;
+        document.getElementById('startHint').textContent=t.startHint;
+        document.getElementById('cabinetTitle').textContent=t.cabinetTitle;
+        document.getElementById('editBtnText').textContent=t.editBtn;
+        document.getElementById('styleModalTitle').innerHTML=`<i class="fas fa-palette"></i> ${t.styleModalTitle}`;
+        document.getElementById('langModalTitle').innerHTML=`<i class="fas fa-language"></i> ${t.langModalTitle}`;
+        document.getElementById('nameModalTitle').textContent=t.nameModalTitle;
+        document.getElementById('newUsername').placeholder=t.namePlaceholder;
+        document.getElementById('saveNameBtn').textContent=t.saveBtn;
+        document.getElementById('promoCodeInput').placeholder = t.promoPlaceholder;
+        document.getElementById('serverLocation').textContent = t.serverLocation;
+        document.getElementById('serverAddress').textContent = t.serverAddress;
+        document.getElementById('serverSecret').textContent = t.serverSecret;
+        document.getElementById('connectBtnText').textContent = t.connectBtnText;
+        document.getElementById('serverTitle').textContent = t.serverTitle;
+        document.getElementById('logoTitle').textContent = "Angel VPN";
+        
+        const quoteIndex=Math.floor(Math.random()*t.quotes.length);
+        document.getElementById('quoteText').textContent=t.quotes[quoteIndex];
+        updateLanguageForMenu();
     }
     
-    function setLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem('app_lang', lang);
+    function updateLanguageForMenu(){
+        const t=translations[currentLang];
+        document.getElementById('proxyMenuTitle').textContent=t.proxyMenuTitle;
+        document.getElementById('promoTitle').textContent=t.promoTitle;
+        document.getElementById('applyBtnText').textContent=t.applyBtnText;
+        document.getElementById('tgBtnText').textContent=t.tgBtnText;
+        document.getElementById('connectBtnText').textContent=t.connectBtnText;
+        document.getElementById('serverTitle').textContent=t.serverTitle;
+    }
+    
+    function setLanguage(lang){
+        currentLang=lang;
+        localStorage.setItem('app_lang',lang);
         updateLanguage();
-        showToast(`${lang === 'ru' ? '🇷🇺 Русский язык' : '🇬🇧 English language'}`);
+        showToast(lang==='ru'?'🇷🇺 Русский язык':'🇬🇧 English language');
         playClickSound();
+        closeLangModal();
     }
     
-    // ==================== ПОЛЬЗОВАТЕЛЬ С РАНДОМНЫМ НИКОМ ====================
-    let existingNames = JSON.parse(localStorage.getItem('angel_usernames')) || [];
-    let currentUser = JSON.parse(localStorage.getItem('angel_current_user'));
-    
-    if (!currentUser) {
-        let randomName = generateRandomName();
-        while (existingNames.includes(randomName)) {
-            randomName = generateRandomName();
-        }
-        currentUser = {
-            id: Math.floor(Math.random() * 90000) + 10000,
-            username: randomName
-        };
+    // ========== ПОЛЬЗОВАТЕЛЬ ==========
+    let existingNames=JSON.parse(localStorage.getItem('angel_usernames'))||[];
+    let currentUser=JSON.parse(localStorage.getItem('angel_current_user'));
+    if(!currentUser){
+        let randomName=generateRandomName();
+        while(existingNames.includes(randomName)) randomName=generateRandomName();
+        currentUser={id:Math.floor(Math.random()*90000)+10000,username:randomName};
         existingNames.push(randomName);
-        localStorage.setItem('angel_usernames', JSON.stringify(existingNames));
-        localStorage.setItem('angel_current_user', JSON.stringify(currentUser));
-        setTimeout(() => {
-            showToast(`✨ Добро пожаловать, ${randomName}!`);
-        }, 500);
+        localStorage.setItem('angel_usernames',JSON.stringify(existingNames));
+        localStorage.setItem('angel_current_user',JSON.stringify(currentUser));
+        setTimeout(()=>{ showToast(`✨ Welcome, ${randomName}!`); },500);
     }
+    function saveCurrentUser(){ localStorage.setItem('angel_current_user',JSON.stringify(currentUser)); if(!existingNames.includes(currentUser.username)){ existingNames.push(currentUser.username); localStorage.setItem('angel_usernames',JSON.stringify(existingNames)); } }
+    function isUsernameUnique(name,excludeCurrent=true){ const currentName=excludeCurrent?currentUser.username:null; return !existingNames.some(existing=>existing.toLowerCase()===name.toLowerCase()&&(excludeCurrent?existing!==currentName:true)); }
     
-    function saveCurrentUser() {
-        localStorage.setItem('angel_current_user', JSON.stringify(currentUser));
-        if (!existingNames.includes(currentUser.username)) {
-            existingNames.push(currentUser.username);
-            localStorage.setItem('angel_usernames', JSON.stringify(existingNames));
+    // ========== ТЕМЫ ==========
+    let currentTheme=localStorage.getItem('app_theme')||'default';
+    function setTheme(theme){ 
+        document.body.setAttribute('data-theme',theme); 
+        localStorage.setItem('app_theme',theme); 
+        currentTheme=theme; 
+        updateParticlesColor(); 
+        document.getElementById('themeToggle').innerHTML=theme==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
+        // Обновляем градиент логотипа
+        const logoTitle = document.getElementById('logoTitle');
+        if(logoTitle) {
+            logoTitle.style.background = `linear-gradient(135deg, var(--gradient-start), var(--gradient-end))`;
+            logoTitle.style.webkitBackgroundClip = 'text';
+            logoTitle.style.backgroundClip = 'text';
         }
+        playThemeSound(); 
     }
-    
-    function isUsernameUnique(name, excludeCurrent = true) {
-        const currentName = excludeCurrent ? currentUser.username : null;
-        return !existingNames.some(existing => 
-            existing.toLowerCase() === name.toLowerCase() && 
-            (excludeCurrent ? existing !== currentName : true)
-        );
-    }
-    
-    // ==================== ТЕМЫ ====================
-    let currentTheme = localStorage.getItem('app_theme') || 'default';
-    
-    function setTheme(theme) {
-        document.body.setAttribute('data-theme', theme);
-        localStorage.setItem('app_theme', theme);
-        currentTheme = theme;
-        updateParticlesColor();
-        const themeToggleBtn = document.getElementById('themeToggle');
-        if (theme === 'dark') {
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-        playClickSound();
-    }
-    
-    function toggleLightDark() {
-        if (currentTheme === 'dark') {
-            setTheme('default');
-            showToast(translations[currentLang].lightTheme);
-        } else {
-            setTheme('dark');
-            showToast(translations[currentLang].darkTheme);
-        }
-    }
-    
+    function toggleLightDark(){ if(currentTheme==='dark'){ setTheme('default'); showToast(translations[currentLang].lightTheme); }else{ setTheme('dark'); showToast(translations[currentLang].darkTheme); } }
     setTheme(currentTheme);
     
-    // ==================== ЧАСТИЦЫ ====================
-    function createParticles() {
-        const container = document.getElementById('particlesContainer');
-        if (!container) return;
-        container.innerHTML = '';
-        const particleCount = window.innerWidth < 768 ? 25 : 40;
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            const size = Math.random() * 5 + 2;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = Math.random() * 8 + 5 + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            particle.style.opacity = Math.random() * 0.5 + 0.2;
-            container.appendChild(particle);
-        }
-    }
+    // ========== ЧАСТИЦЫ ==========
+    function createParticles(){ const c=document.getElementById('particlesContainer'); if(!c) return; c.innerHTML=''; const count=window.innerWidth<768?20:35; for(let i=0;i<count;i++){ const p=document.createElement('div'); p.classList.add('particle'); const s=Math.random()*4+2; p.style.width=s+'px'; p.style.height=s+'px'; p.style.left=Math.random()*100+'%'; p.style.animationDuration=Math.random()*8+5+'s'; p.style.animationDelay=Math.random()*5+'s'; p.style.opacity=Math.random()*0.5+0.2; c.appendChild(p); } }
+    function updateParticlesColor(){ const accent=getComputedStyle(document.body).getPropertyValue('--accent').trim(); document.querySelectorAll('.particle').forEach(p=>{ p.style.background=`radial-gradient(circle, ${accent}, transparent)`; }); }
     
-    function updateParticlesColor() {
-        const particles = document.querySelectorAll('.particle');
-        const accentColor = getComputedStyle(document.body).getPropertyValue('--accent').trim();
-        particles.forEach(p => {
-            p.style.background = `radial-gradient(circle, ${accentColor}, transparent)`;
-        });
-    }
+    // ========== TOAST ==========
+    function showToast(msg,dur=2000){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),dur); }
     
-    // ==================== TOAST ====================
-    function showToast(message, duration = 2000) {
-        const toast = document.getElementById('toast');
-        toast.textContent = message;
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, duration);
-    }
+    // ========== ОСТАЛЬНОЕ ==========
+    function updateCabinet(){ document.getElementById('usernameDisplay').textContent=currentUser.username; document.getElementById('avatarLetter').textContent=currentUser.username.charAt(0).toUpperCase(); document.getElementById('userId').textContent=currentUser.id; }
+    function updateQuote(){ const t=translations[currentLang]; const idx=Math.floor(Math.random()*t.quotes.length); document.getElementById('quoteText').textContent=t.quotes[idx]; }
+    function copyUserId(){ const id=currentUser.id; navigator.clipboard.writeText(id.toString()).then(()=>{ showToast(`${translations[currentLang].idCopied} ${id}`); playClickSound(); }).catch(()=>showToast('❌ Failed to copy')); }
+    function updateLatency(){ document.getElementById('latencyValue').textContent=Math.floor(Math.random()*40)+18; }
+    function openNameModal(){ playClickSound(); document.getElementById('newUsername').value=currentUser.username; document.getElementById('nameError').textContent=''; document.getElementById('nameModal').classList.add('active'); }
+    function closeNameModal(){ document.getElementById('nameModal').classList.remove('active'); }
+    function saveNewUsername(){ const t=translations[currentLang]; const newName=document.getElementById('newUsername').value.trim(); if(!newName){ document.getElementById('nameError').textContent=t.nameEmpty; return; } if(newName.length<2){ document.getElementById('nameError').textContent=t.nameShort; return; } if(newName.length>20){ document.getElementById('nameError').textContent=t.nameLong; return; } if(!isUsernameUnique(newName,true)){ document.getElementById('nameError').textContent=t.nameTaken; return; } const oldIdx=existingNames.indexOf(currentUser.username); if(oldIdx!==-1) existingNames.splice(oldIdx,1); currentUser.username=newName; existingNames.push(newName); localStorage.setItem('angel_usernames',JSON.stringify(existingNames)); saveCurrentUser(); updateCabinet(); closeNameModal(); showToast(`${t.nameChanged} "${newName}"`); playSuccessSound(); }
+    function closeLangModal(){ document.getElementById('langModal').classList.remove('active'); }
     
-    // ==================== ОСТАЛЬНЫЕ ФУНКЦИИ ====================
-    function updateCabinet() {
-        document.getElementById('usernameDisplay').textContent = currentUser.username;
-        document.getElementById('avatarLetter').textContent = currentUser.username.charAt(0).toUpperCase();
-        document.getElementById('userId').textContent = currentUser.id;
-    }
+    // ========== ИНИЦИАЛИЗАЦИЯ ==========
+    updateCabinet(); createParticles(); updateParticlesColor(); updateLanguage(); updateQuote(); updateLatency(); setInterval(updateLatency,2000); setInterval(updateQuote,30000);
     
-    function updateQuote() {
-        const t = translations[currentLang];
-        const quoteIndex = Math.floor(Math.random() * t.quotes.length);
-        document.getElementById('quoteText').textContent = t.quotes[quoteIndex];
-    }
+    // ========== ОБРАБОТЧИКИ ==========
+    document.getElementById('startBtn').addEventListener('click', openProxyMenu);
+    document.getElementById('closeProxyMenu').addEventListener('click', closeProxyMenu);
+    document.getElementById('applyPromoBtn').addEventListener('click', applyPromoCode);
+    document.getElementById('telegramRedirectBtn').addEventListener('click', redirectToTelegramChat);
+    document.getElementById('premiumConnectBtn').addEventListener('click', () => connectToProxy('tg://proxy?server=37.139.42.140&port=443&secret=f5199e949c0f23bc887581218ad8c1e6'));
+    document.getElementById('proxyMenuModal').addEventListener('click',(e)=>{ if(e.target===document.getElementById('proxyMenuModal')) closeProxyMenu(); });
+    document.getElementById('profileBtn').addEventListener('click',openNameModal);
+    document.getElementById('editNameBtn').addEventListener('click',openNameModal);
+    document.getElementById('closeNameModal').addEventListener('click',closeNameModal);
+    document.getElementById('saveNameBtn').addEventListener('click',saveNewUsername);
+    document.getElementById('gradientSelect').addEventListener('click',()=>{ playClickSound(); document.getElementById('gradientModal').classList.add('active'); });
+    document.getElementById('closeGradientModal').addEventListener('click',()=>{ document.getElementById('gradientModal').classList.remove('active'); });
+    document.getElementById('langSelect').addEventListener('click',()=>{ playClickSound(); document.getElementById('langModal').classList.add('active'); });
+    document.getElementById('closeLangModal').addEventListener('click',closeLangModal);
+    document.getElementById('themeToggle').addEventListener('click',toggleLightDark);
+    document.getElementById('copyIdBtn').addEventListener('click',copyUserId);
+    document.getElementById('soundToggle').addEventListener('click',toggleSound);
+    document.getElementById('musicToggle').addEventListener('click',toggleMusic);
+    document.getElementById('glassToggle').addEventListener('click',toggleGlassMode);
+    document.getElementById('quoteFooter').addEventListener('click',()=>{ updateQuote(); playClickSound(); showToast(translations[currentLang].quotes[Math.floor(Math.random()*translations[currentLang].quotes.length)]); });
+    document.getElementById('nameModal').addEventListener('click',(e)=>{ if(e.target===document.getElementById('nameModal')) closeNameModal(); });
+    document.getElementById('gradientModal').addEventListener('click',(e)=>{ if(e.target===document.getElementById('gradientModal')) document.getElementById('gradientModal').classList.remove('active'); });
+    document.getElementById('langModal').addEventListener('click',(e)=>{ if(e.target===document.getElementById('langModal')) closeLangModal(); });
+    document.getElementById('newUsername').addEventListener('keypress',(e)=>{ if(e.key==='Enter') saveNewUsername(); });
+    document.getElementById('promoCodeInput').addEventListener('keypress',(e)=>{ if(e.key==='Enter') applyPromoCode(); });
     
-    function copyUserId() {
-        const userId = currentUser.id;
-        navigator.clipboard.writeText(userId.toString()).then(() => {
-            showToast(`${translations[currentLang].idCopied} ${userId}`);
-            playClickSound();
-        }).catch(() => {
-            showToast('❌ Failed to copy');
-        });
-    }
-    
-    function redirectToTelegram() {
-        const t = translations[currentLang];
-        playClickSound();
-        if (window.navigator && window.navigator.vibrate) window.navigator.vibrate(50);
-        const loader = document.getElementById('loaderOverlay');
-        const loaderText = document.getElementById('loaderText');
-        loader.classList.add('active');
-        loaderText.textContent = t.connecting;
-        setTimeout(() => { loaderText.textContent = t.bypassing; }, 300);
-        setTimeout(() => { loaderText.textContent = t.redirecting; }, 700);
-        setTimeout(() => { window.location.href = 'https://t.me/angelvpns'; }, 1200);
-    }
-    
-    function updateLatency() {
-        document.getElementById('latencyValue').textContent = Math.floor(Math.random() * 40) + 18;
-    }
-    
-    // ==================== МОДАЛКИ ====================
-    function openNameModal() {
-        playClickSound();
-        document.getElementById('newUsername').value = currentUser.username;
-        document.getElementById('nameError').textContent = '';
-        document.getElementById('nameModal').classList.add('active');
-    }
-    
-    function closeNameModal() {
-        document.getElementById('nameModal').classList.remove('active');
-    }
-    
-    function saveNewUsername() {
-        const t = translations[currentLang];
-        const newName = document.getElementById('newUsername').value.trim();
-        if (!newName) {
-            document.getElementById('nameError').textContent = t.nameEmpty;
-            return;
-        }
-        if (newName.length < 2) {
-            document.getElementById('nameError').textContent = t.nameShort;
-            return;
-        }
-        if (newName.length > 20) {
-            document.getElementById('nameError').textContent = t.nameLong;
-            return;
-        }
-        if (!isUsernameUnique(newName, true)) {
-            document.getElementById('nameError').textContent = t.nameTaken;
-            return;
-        }
-        const oldNameIndex = existingNames.indexOf(currentUser.username);
-        if (oldNameIndex !== -1) existingNames.splice(oldNameIndex, 1);
-        currentUser.username = newName;
-        existingNames.push(newName);
-        localStorage.setItem('angel_usernames', JSON.stringify(existingNames));
-        saveCurrentUser();
-        updateCabinet();
-        closeNameModal();
-        showToast(`${t.nameChanged} "${newName}"`);
-        playSuccessSound();
-    }
-    
-    // ==================== ИНИЦИАЛИЗАЦИЯ ====================
-    updateCabinet();
-    createParticles();
-    updateParticlesColor();
-    updateLanguage();
-    updateQuote();
-    updateLatency();
-    setInterval(updateLatency, 2000);
-    setInterval(updateQuote, 30000);
-    
-    // ==================== ОБРАБОТЧИКИ ====================
-    document.getElementById('startBtn').addEventListener('click', redirectToTelegram);
-    document.getElementById('profileBtn').addEventListener('click', openNameModal);
-    document.getElementById('editNameBtn').addEventListener('click', openNameModal);
-    document.getElementById('closeNameModal').addEventListener('click', closeNameModal);
-    document.getElementById('saveNameBtn').addEventListener('click', saveNewUsername);
-    document.getElementById('gradientSelect').addEventListener('click', () => {
-        playClickSound();
-        document.getElementById('gradientModal').classList.add('active');
-    });
-    document.getElementById('closeGradientModal').addEventListener('click', () => {
-        document.getElementById('gradientModal').classList.remove('active');
-    });
-    document.getElementById('langSelect').addEventListener('click', () => {
-        playClickSound();
-        document.getElementById('langModal').classList.add('active');
-    });
-    document.getElementById('closeLangModal').addEventListener('click', () => {
-        document.getElementById('langModal').classList.remove('active');
-    });
-    document.getElementById('themeToggle').addEventListener('click', toggleLightDark);
-    document.getElementById('copyIdBtn').addEventListener('click', copyUserId);
-    document.getElementById('soundToggle').addEventListener('click', toggleSound);
-    document.getElementById('musicToggle').addEventListener('click', toggleMusic);
-    document.getElementById('glassToggle').addEventListener('click', toggleGlassMode);
-    document.getElementById('quoteFooter').addEventListener('click', () => {
-        updateQuote();
-        playClickSound();
-        showToast(translations[currentLang].quotes[Math.floor(Math.random() * translations[currentLang].quotes.length)]);
-    });
-    
-    // Модалки по клику на фон
-    document.getElementById('nameModal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('nameModal')) closeNameModal();
-    });
-    document.getElementById('gradientModal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('gradientModal')) document.getElementById('gradientModal').classList.remove('active');
-    });
-    document.getElementById('langModal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('langModal')) document.getElementById('langModal').classList.remove('active');
-    });
-    
-    document.getElementById('newUsername').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') saveNewUsername();
-    });
-    
-    // Выбор градиента
-    document.querySelectorAll('.gradient-option').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const theme = btn.dataset.theme;
+    // Выбор стиля
+    document.querySelectorAll('.theme-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const theme = card.dataset.theme;
             setTheme(theme);
             document.getElementById('gradientModal').classList.remove('active');
-            const themeNames = { default: 'Ангельский', sunset: 'Закат', space: 'Космос', neon: 'Неон', dark: 'Темную' };
+            const themeNames = { default: 'Ангельский', sunset: 'Закат', space: 'Космос', neon: 'Неон', dark: 'Тёмная', amethyst: 'Аметист', sakura: 'Сакура', ocean: 'Океан' };
             showToast(`${translations[currentLang].themeChanged} ${themeNames[theme] || theme}`);
-            playSuccessSound();
+            playThemeSound();
         });
     });
     
-    // Выбор языка
-    document.querySelectorAll('.lang-option').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            setLanguage(lang);
-            document.getElementById('langModal').classList.remove('active');
-            updateQuote();
-        });
-    });
+    document.querySelectorAll('.lang-option').forEach(btn=>{ btn.addEventListener('click',()=>{ setLanguage(btn.dataset.lang); }); });
+    document.body.addEventListener('click',function initMusic(){ if(isMusicEnabled&&!isMusicPlaying) startMusic(); document.body.removeEventListener('click',initMusic); },{once:true});
+    setInterval(()=>{ const dot=document.getElementById('statusDot'); if(dot.classList.contains('active')){ dot.style.transform='scale(1.1)'; setTimeout(()=>dot.style.transform='scale(1)',200); } },2000);
     
-    // Звуки на все кнопки
-    document.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            if (!btn.classList.contains('sound-toggle') && 
-                !btn.classList.contains('music-toggle') &&
-                !btn.closest('.modal')) {
-                playClickSound();
-            }
-        });
-    });
-    
-    // Запуск музыки после первого взаимодействия
-    document.body.addEventListener('click', function initMusic() {
-        if (isMusicEnabled && !isMusicPlaying) {
-            startMusic();
-        }
-        document.body.removeEventListener('click', initMusic);
-    }, { once: true });
-    
-    // Анимация статуса
-    setInterval(() => {
-        const statusDot = document.getElementById('statusDot');
-        if (statusDot.classList.contains('active')) {
-            statusDot.style.transform = 'scale(1.1)';
-            setTimeout(() => { statusDot.style.transform = 'scale(1)'; }, 200);
-        }
-    }, 2000);
+    // Если уже разблокировано, показываем сервер
+    if (isPremiumUnlocked) {
+        showServerSection();
+    }
 </script>
 </body>
 </html>
